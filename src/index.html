@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="<%= APP_BASE %>">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= APP_TITLE %></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body>
+
+   <!-- Page Wrapper -->
+    <div id="page-wrapper" class="page-wrapper" data-editmode="false">
+    
+      <!-- Start #nav-bar -->
+	<nav id="nav-bar" class="block navbar navbar-fixed navbar-main inverse bg-primary" data-categ="navbar" data-navbar="sticky"
+     data-edit="false" data-del="bg-primary inverse" data-add="bg-white border-b">
+	<!-- Container -->
+	<div class="container">
+		<!-- Header-->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<i class="ti-menu"></i>
+			</button>
+			<a class="navbar-brand font-cond-b lts-md" href="#home" data-edit="false" data-editor="field" data-field="href[Brand Link]">
+                <i class="brand-icon et-target fg-accent" data-field="class[Brand Icon Class,icon]"></i><span 
+                data-field="html[Brand Text]">CASIVA</span></a>
+		</div>
+		<!-- /Header -->
+		
+	</div>
+	<!-- /Container -->
+	</nav>
+	<!-- /End #nav-bar -->
+    
+      <!-- About Block -->
+      <div id="about" class="block split-block border-b" data-edit="false">
+      
+        <!-- Container -->
+        <div class="container pady-block-lg">
+        
+          <!-- Row -->
+          <div class="row row-table">
+          
+            <!-- Col -->
+            <div class="col-sm-12 align-center v-middle mgb-30-xs">
+            
+                <cs-app>
+                    
+                  <!-- Page Loading Anim -->
+                  <div class="page-loader align-center bg-white">
+                    <div class="valigner">
+                      <div class="v-middle">
+                        <!-- Ball clip rotate  -->
+                        <div class="la-ball-clip-rotate fg-primary hcenter">
+                            <div></div>
+                        </div>
+                        <!-- Ball clip rotate -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /Page Loading Anim -->
+                    
+                </cs-app>
+           
+            </div>
+            <!-- /Col -->
+          
+          </div>
+          <!-- /Row -->
+        
+        </div>
+        <!-- /Container -->
+
+      </div>
+      <!-- /About Block -->      
+    </div>
+    <!-- scripts -->
+ 
+  <script>
+  // function.name (all IE)
+  // Remove once https://github.com/angular/angular/issues/6501 is fixed.
+  /*! @source http://stackoverflow.com/questions/6903762/function-name-not-supported-in-ie*/
+  if (!Object.hasOwnProperty('name')) {
+    Object.defineProperty(Function.prototype, 'name', {
+      get: function() {
+        var matches = this.toString().match(/^\s*function\s*((?![0-9])[a-zA-Z0-9_$]*)\s*\(/);
+        var name = matches && matches.length > 1 ? matches[1] : "";
+        // For better performance only parse once, and then cache the
+        // result through a new accessor for repeated access.
+        Object.defineProperty(this, 'name', {value: name});
+        return name;
+      }
+    });
+  }
+  </script>
+
+  <script>
+  // Fixes undefined module function in SystemJS bundle
+  function module() {}
+  </script>
+
+  <!-- shims:js -->
+  <!-- endinject -->
+
+  <% if (ENV === 'dev') { %>
+  <script>
+    System.config(<%=
+      JSON.stringify(SYSTEM_CONFIG, null, 2)
+    %>)
+  </script>
+  <% } %>
+
+  <!-- libs:js -->
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <% if (ENV === 'dev') { %>
+  <script>
+  System.import('<%= BOOTSTRAP_MODULE %>')
+    .catch(function (e) {
+      console.error(e,
+        'Report this error at https://github.com/mgechev/angular2-seed/issues');
+    });
+  </script>
+  <% } %>
+
+</body>
+</html>
