@@ -81,7 +81,6 @@ export class SeedConfig {
   DEV_DEPENDENCIES = this.DEV_NPM_DEPENDENCIES.concat(this.APP_ASSETS);
   PROD_DEPENDENCIES = this.PROD_NPM_DEPENDENCIES.concat(this.APP_ASSETS);
 
-
   // ----------------
   // SystemsJS Configuration.
   protected SYSTEM_CONFIG_DEV = {
@@ -94,7 +93,11 @@ export class SeedConfig {
     },
     packages: {
       angular2: { defaultExtension: false },
-      rxjs: { defaultExtension: false }
+      rxjs: { defaultExtension: false },
+      'angular2-jwt': { defaultExtension: false }
+    },
+    map: {
+      'angular2-jwt': 'angular2-jwt/angular2-jwt'
     }
   };
 

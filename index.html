@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Casiva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="uikit/css/uikit.css" rel="stylesheet">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    
+    <script src="https://code.angularjs.org/2.0.0-beta.7/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.7/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.7/angular2.dev.js"></script>
+
+<!-- Auth0 Lock script -->
+<script src="//cdn.auth0.com/js/lock-8.2.min.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {
+            'app': {defaultExtension: 'ts'},
+            '/angular2-jwt': { defaultExtension: 'js'}
+        } 
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+            
+       
+    </script>
+    
+    <!-- Bootstrap Plugins -->
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper" class="page-wrapper" data-editmode="false">
+    
+      <!-- Start #nav-bar -->
+	<nav id="nav-bar" class="block navbar navbar-fixed navbar-main inverse bg-primary" data-categ="navbar" data-navbar="sticky"
+     data-edit="false" data-del="bg-primary inverse" data-add="bg-white border-b">
+	<!-- Container -->
+	<div class="container">
+		<!-- Header-->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<i class="ti-menu"></i>
+			</button>
+			<a class="navbar-brand font-cond-b lts-md" href="#home" data-edit="false" data-editor="field" data-field="href[Brand Link]">
+                <i class="brand-icon et-target fg-accent" data-field="class[Brand Icon Class,icon]"></i><span 
+                data-field="html[Brand Text]">CASIVA</span></a>
+		</div>
+		<!-- /Header -->
+		
+	</div>
+	<!-- /Container -->
+	</nav>
+	<!-- /End #nav-bar -->
+    
+      <!-- About Block -->
+      <div id="about" class="block split-block border-b" data-edit="false">
+      
+        <!-- Container -->
+        <div class="container pady-block-lg">
+        
+          <!-- Row -->
+          <div class="row row-table">
+          
+            <!-- Col -->
+            <div class="col-sm-12 align-center v-middle mgb-30-xs">
+            
+                <my-app>
+                    
+                    <!-- Page Loading Anim -->
+    <div class="page-loader align-center bg-white">
+      <div class="valigner">
+        <div class="v-middle">
+          <!-- Ball clip rotate  -->
+          <div class="la-ball-clip-rotate fg-primary hcenter">
+              <div></div>
+          </div>
+          <!-- Ball clip rotate -->
+        </div>
+      </div>
+    </div>
+    <!-- /Page Loading Anim -->
+                    
+                    </my-app>
+           
+            </div>
+            <!-- /Col -->
+          
+          </div>
+          <!-- /Row -->
+        
+        </div>
+        <!-- /Container -->
+
+      </div>
+      <!-- /About Block -->      
+    </div>
+    <!-- scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap3-typeahead/bootstrap3-typeahead.js"></script>
+
+  </body>
+</html>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
